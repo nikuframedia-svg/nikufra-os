@@ -1,0 +1,30 @@
+{
+  "generated_at": "2025-12-18T08:56:24.807636",
+  "slos": {
+    "/api/prodplan/orders": {
+      "target_p95_ms": 400,
+      "measured_p95_ms": null,
+      "status": "NOT_MEASURED",
+      "note": "Run pytest tests/performance/test_slos.py to measure"
+    },
+    "/api/prodplan/orders/{id}": {
+      "target_p95_ms": 250,
+      "measured_p95_ms": null,
+      "status": "NOT_MEASURED",
+      "note": "Run pytest tests/performance/test_slos.py to measure"
+    },
+    "/api/prodplan/schedule/current": {
+      "target_p95_ms": 250,
+      "measured_p95_ms": null,
+      "status": "NOT_MEASURED",
+      "note": "Run pytest tests/performance/test_slos.py to measure"
+    },
+    "/api/kpis/overview": {
+      "target_p95_ms": 300,
+      "measured_p95_ms": null,
+      "status": "NOT_MEASURED",
+      "note": "Run pytest tests/performance/test_slos.py to measure"
+    }
+  },
+  "benchmark_data": null
+}

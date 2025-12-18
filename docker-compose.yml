@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: nelo_postgres
+    environment:
+      POSTGRES_USER: nelo_user
+      POSTGRES_PASSWORD: nelo_pass
+      POSTGRES_DB: nelo_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nelo_user -d nelo_db -h localhost"]
+      interval: 2s
+      timeout: 2s
+      retries: 60
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: nelo_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: nelo_api
+    environment:
+      DATABASE_URL_DOCKER: postgresql://nelo_user:nelo_pass@db:5432/nelo_db
+      REDIS_URL: redis://redis:6379/0
+      FOLHA_IA_PATH: /app/data/raw/Folha_IA.xlsx
+      IN_DOCKER: "true"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./app:/app/app
+      - ./backend:/app/backend
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: nelo_worker
+    environment:
+      DATABASE_URL_DOCKER: postgresql://nelo_user:nelo_pass@db:5432/nelo_db
+      REDIS_URL: redis://redis:6379/0
+      FOLHA_IA_PATH: /app/data/raw/Folha_IA.xlsx
+      IN_DOCKER: "true"
+    volumes:
+      - ./data:/app/data
+      - ./app:/app/app
+      - ./backend:/app/backend
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: python -m arq app.workers.worker.WorkerSettings
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: nelo_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: nelo_grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+

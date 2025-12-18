@@ -104,3 +104,4 @@ class TestB6_SparesForecastBasedOnRUL:
         pass
 
 
+

@@ -1,0 +1,2 @@
+"""Production-grade ingestion module."""
+

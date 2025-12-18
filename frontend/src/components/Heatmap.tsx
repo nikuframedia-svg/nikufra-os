@@ -1,5 +1,3 @@
-import React from 'react';
-import { tokens } from '../theme/tokens';
 
 interface HeatmapProps {
   data: Array<{

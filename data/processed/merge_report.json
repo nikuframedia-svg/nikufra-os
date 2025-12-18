@@ -1,0 +1,71 @@
+{
+  "run_id": 18,
+  "merged_sheets": 9,
+  "total_processed": 1017069,
+  "total_rejected": 60493,
+  "results": {
+    "Fases": {
+      "sheet_name": "Fases",
+      "staging_count": 71,
+      "processed": 71,
+      "rejected": 0,
+      "elapsed_seconds": 0.11
+    },
+    "Modelos": {
+      "sheet_name": "Modelos",
+      "staging_count": 894,
+      "processed": 894,
+      "rejected": 0,
+      "elapsed_seconds": 0.03
+    },
+    "Funcionarios": {
+      "sheet_name": "Funcionarios",
+      "staging_count": 902,
+      "processed": 301,
+      "rejected": 0,
+      "elapsed_seconds": 0.03
+    },
+    "FuncionariosFasesAptos": {
+      "sheet_name": "FuncionariosFasesAptos",
+      "staging_count": 902,
+      "processed": 884,
+      "rejected": 10,
+      "elapsed_seconds": 0.03
+    },
+    "FasesStandardModelos": {
+      "sheet_name": "FasesStandardModelos",
+      "staging_count": 15347,
+      "processed": 15347,
+      "rejected": 0,
+      "elapsed_seconds": 0.49
+    },
+    "OrdensFabrico": {
+      "sheet_name": "OrdensFabrico",
+      "staging_count": 27380,
+      "processed": 27380,
+      "rejected": 0,
+      "elapsed_seconds": 1.67
+    },
+    "FasesOrdemFabrico": {
+      "sheet_name": "FasesOrdemFabrico",
+      "staging_count": 519079,
+      "processed": 458652,
+      "rejected": 60427,
+      "elapsed_seconds": 31.19
+    },
+    "FuncionariosFaseOrdemFabrico": {
+      "sheet_name": "FuncionariosFaseOrdemFabrico",
+      "staging_count": 423769,
+      "processed": 423713,
+      "rejected": 56,
+      "elapsed_seconds": 11.57
+    },
+    "OrdemFabricoErros": {
+      "sheet_name": "OrdemFabricoErros",
+      "staging_count": 89836,
+      "processed": 89827,
+      "rejected": 0,
+      "elapsed_seconds": 9.94
+    }
+  }
+}

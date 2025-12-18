@@ -1,4 +1,3 @@
-import React from 'react';
 import { EquipmentSpec } from '../../types/prodplan';
 
 interface EquipmentSpecRowProps {

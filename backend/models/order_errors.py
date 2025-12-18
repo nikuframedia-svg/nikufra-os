@@ -17,11 +17,15 @@ class OrderError(Base):
     
     # Error attributes
     error_date = Column(DateTime, nullable=True)  # Data do erro
-    error_type = Column(String, nullable=True)  # Tipo de erro
-    error_description = Column(Text, nullable=True)  # Descrição do erro
-    severity = Column(String, nullable=True)  # Severidade (alta, média, baixa)
+    error_type = Column(String, nullable=True)  # Erro_FaseAvaliacao
+    error_description = Column(Text, nullable=True)  # Erro_Descricao
+    severity = Column(String, nullable=True)  # OFCH_GRAVIDADE
     resolved = Column(String, nullable=True)  # Resolvido (sim/não)
     resolution_date = Column(DateTime, nullable=True)  # Data de resolução
+    # Campos adicionais do Excel
+    fase_avaliacao = Column(String, nullable=True)  # Erro_FaseAvaliacao (código da fase)
+    fase_of_avaliacao_id = Column(String, nullable=True)  # Erro_FaseOfAvaliacao (FaseOf_Id)
+    fase_of_culpada_id = Column(String, nullable=True)  # Erro_FaseOfCulpada (FaseOf_Id)
     
     # Relationships
     order = relationship("Order", back_populates="errors")

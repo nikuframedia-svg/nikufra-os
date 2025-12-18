@@ -1,0 +1,746 @@
+{
+  "file_path": "/Users/martimnicolau/nelo/data/raw/Folha_IA.xlsx",
+  "inspected_at": "2025-12-17T11:16:28.121079",
+  "sheets": {
+    "OrdensFabrico": {
+      "row_count": 27380,
+      "column_count": 6,
+      "columns": {
+        "Of_Id": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 10000,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "29947",
+            "130627",
+            "897189",
+            "134693",
+            "80710"
+          ]
+        },
+        "Of_DataCriacao": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 1767,
+          "cardinality_rate": 0.1767,
+          "examples": [
+            "2020-10-01 00:00:00",
+            "2024-06-06 00:00:00",
+            "2024-02-14 00:00:00",
+            "2022-12-09 00:00:00",
+            "2020-06-27 00:00:00"
+          ]
+        },
+        "Of_DataAcabamento": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 9417,
+          "cardinality_rate": 0.9417,
+          "examples": [
+            "2022-07-29 13:16:00",
+            "2021-04-17 07:43:00",
+            "2020-08-27 16:28:00",
+            "2024-09-20 09:15:00",
+            "2023-10-27 17:00:00"
+          ]
+        },
+        "Of_ProdutoId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 841,
+          "cardinality_rate": 0.0841,
+          "examples": [
+            "42048",
+            "42504",
+            "42598",
+            "44963",
+            "30178"
+          ]
+        },
+        "Of_FaseId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 33,
+          "cardinality_rate": 0.0033,
+          "examples": [
+            "46",
+            "76",
+            "65",
+            "14",
+            "15"
+          ]
+        },
+        "Of_DataTransporte": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 294,
+          "cardinality_rate": 0.0294,
+          "examples": [
+            "2020-10-30 00:00:00",
+            "2021-03-26 00:00:00",
+            "2020-01-17 00:00:00",
+            "2020-10-02 00:00:00",
+            "2025-07-11 00:00:00"
+          ]
+        }
+      },
+      "pk_candidates": [
+        "Of_Id"
+      ]
+    },
+    "FasesOrdemFabrico": {
+      "row_count": 519079,
+      "column_count": 12,
+      "columns": {
+        "FaseOf_Id": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 10000,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "1998356",
+            "1983523",
+            "1981840",
+            "1964724",
+            "1981998"
+          ]
+        },
+        "FaseOf_OfId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 920,
+          "cardinality_rate": 0.092,
+          "examples": [
+            "830024",
+            "124832",
+            "500505",
+            "830009",
+            "32845"
+          ]
+        },
+        "FaseOf_Inicio": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 7249,
+          "cardinality_rate": 0.7249,
+          "examples": [
+            "2020-01-13 10:51:00",
+            "2020-03-12 09:59:00",
+            "2020-04-08 13:52:00",
+            "2020-03-27 13:04:00",
+            "2020-03-18 14:23:00"
+          ]
+        },
+        "FaseOf_Fim": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 7189,
+          "cardinality_rate": 0.7189,
+          "examples": [
+            "2020-02-24 11:55:00",
+            "2020-03-30 15:42:00",
+            "2020-03-12 09:59:00",
+            "2020-01-17 07:53:00",
+            "2020-04-08 13:52:00"
+          ]
+        },
+        "FaseOf_DataPrevista": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 105,
+          "cardinality_rate": 0.0105,
+          "examples": [
+            "2020-04-22 00:00:00",
+            "2020-04-23 00:00:00",
+            "2020-01-17 00:00:00",
+            "2020-10-02 00:00:00",
+            "2020-03-10 00:00:00"
+          ]
+        },
+        "FaseOf_Coeficiente": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 29,
+          "cardinality_rate": 0.0029,
+          "examples": [
+            "0.75",
+            "1.8",
+            "2.7",
+            "1.75",
+            "0.5"
+          ]
+        },
+        "FaseOf_CoeficienteX": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 15,
+          "cardinality_rate": 0.0015,
+          "examples": [
+            "0.74",
+            "4",
+            "1.33",
+            "0.75",
+            "0.5"
+          ]
+        },
+        "FaseOf_FaseId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 30,
+          "cardinality_rate": 0.003,
+          "examples": [
+            "46",
+            "38",
+            "14",
+            "15",
+            "40"
+          ]
+        },
+        "FaseOf_Peso": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 757,
+          "cardinality_rate": 0.0757,
+          "examples": [
+            "11.45",
+            "9.15",
+            "16.3",
+            "6.61",
+            "9.93"
+          ]
+        },
+        "FaseOf_Retorno": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2,
+          "cardinality_rate": 0.0002,
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "FaseOf_Turno": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 4,
+          "cardinality_rate": 0.0004,
+          "examples": [
+            "2",
+            "NULL",
+            "3",
+            "1"
+          ]
+        },
+        "FaseOf_Sequencia": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 32,
+          "cardinality_rate": 0.0032,
+          "examples": [
+            "30",
+            "14",
+            "15",
+            "1",
+            "7"
+          ]
+        }
+      },
+      "pk_candidates": [
+        "FaseOf_Id"
+      ]
+    },
+    "FuncionariosFaseOrdemFabrico": {
+      "row_count": 423769,
+      "column_count": 3,
+      "columns": {
+        "FuncionarioFaseOf_FaseOfId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 10000,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "2938781",
+            "2077625",
+            "2085473",
+            "1954305",
+            "2940573"
+          ]
+        },
+        "FuncionarioFaseOf_FuncionarioId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 134,
+          "cardinality_rate": 0.0134,
+          "examples": [
+            "24884",
+            "28736",
+            "21722",
+            "20366",
+            "25132"
+          ]
+        },
+        "FuncionarioFaseOf_Chefe": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2,
+          "cardinality_rate": 0.0002,
+          "examples": [
+            "1",
+            "0"
+          ]
+        }
+      },
+      "pk_candidates": [
+        "FuncionarioFaseOf_FaseOfId"
+      ]
+    },
+    "OrdemFabricoErros": {
+      "row_count": 89836,
+      "column_count": 6,
+      "columns": {
+        "Erro_Descricao": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 47,
+          "cardinality_rate": 0.0047,
+          "examples": [
+            "Laminagem mal compactado",
+            "Pintura Malhada",
+            "Pintura uniforme sem zonas transparentes",
+            "Molde com deforma\u00e7\u00f5es/danos",
+            "Danos no desmolde"
+          ]
+        },
+        "Erro_OfId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2152,
+          "cardinality_rate": 0.2152,
+          "examples": [
+            "129655",
+            "134599",
+            "895208",
+            "33619",
+            "128816"
+          ]
+        },
+        "Erro_FaseAvaliacao": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2,
+          "cardinality_rate": 0.0002,
+          "examples": [
+            "8",
+            "6"
+          ]
+        },
+        "OFCH_GRAVIDADE": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 3,
+          "cardinality_rate": 0.0003,
+          "examples": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        "Erro_FaseOfAvaliacao": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2293,
+          "cardinality_rate": 0.2293,
+          "examples": [
+            "1974918",
+            "2612150",
+            "2092630",
+            "2073050",
+            "2119745"
+          ]
+        },
+        "Erro_FaseOfCulpada": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 4001,
+          "cardinality_rate": 0.4001,
+          "examples": [
+            "2530351",
+            "3441194",
+            "2150524",
+            "2551734",
+            "2154631"
+          ]
+        }
+      },
+      "pk_candidates": []
+    },
+    "Funcionarios": {
+      "row_count": 902,
+      "column_count": 3,
+      "columns": {
+        "Funcionario_Id": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 301,
+          "cardinality_rate": 0.3337,
+          "examples": [
+            "24583",
+            "35710",
+            "27639",
+            "27607",
+            "24884"
+          ]
+        },
+        "Funcionario_Nome": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 301,
+          "cardinality_rate": 0.3337,
+          "examples": [
+            "z) Pedro Franco",
+            "Concei\u00e7\u00e3o Marques Oliveira",
+            "Anselmo Ant\u00f3nio Maia Ferreira",
+            "Rute dos Santos Nascimento",
+            "z) Diogo Pereira de Sousa"
+          ]
+        },
+        "Funcionario_Activo": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2,
+          "cardinality_rate": 0.0022,
+          "examples": [
+            "1",
+            "0"
+          ]
+        }
+      },
+      "pk_candidates": []
+    },
+    "FuncionariosFasesAptos": {
+      "row_count": 902,
+      "column_count": 3,
+      "columns": {
+        "FuncionarioFase_FuncionarioId": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 301,
+          "cardinality_rate": 0.3337,
+          "examples": [
+            "24583",
+            "35710",
+            "27639",
+            "27607",
+            "24884"
+          ]
+        },
+        "FuncionarioFase_FaseId": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 38,
+          "cardinality_rate": 0.0421,
+          "examples": [
+            "46",
+            "38",
+            "76",
+            "65",
+            "14"
+          ]
+        },
+        "FuncionarioFase_Inicio": {
+          "inferred_type": "date",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 338,
+          "cardinality_rate": 0.3747,
+          "examples": [
+            "2019-07-13 00:00:00",
+            "2024-09-30 09:21:00",
+            "1997-08-01 00:00:00",
+            "2020-02-28 00:00:00",
+            "2024-01-23 00:00:00"
+          ]
+        }
+      },
+      "pk_candidates": []
+    },
+    "Fases": {
+      "row_count": 71,
+      "column_count": 5,
+      "columns": {
+        "Fase_Id": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 71,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "46",
+            "38",
+            "65",
+            "76",
+            "37"
+          ]
+        },
+        "Fase_Nome": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 71,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "N\u00e3o Laminado",
+            "Colagem Golas",
+            "Multitarefa",
+            "Corte & Costura",
+            "Lixagem - \u00e1gua"
+          ]
+        },
+        "Fase_Sequencia": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 50,
+          "cardinality_rate": 0.7042,
+          "examples": [
+            "46",
+            "38",
+            "34",
+            "37",
+            "41"
+          ]
+        },
+        "Fase_DeProducao": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2,
+          "cardinality_rate": 0.0282,
+          "examples": [
+            "1",
+            "0"
+          ]
+        },
+        "Fase_Automatica": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 2,
+          "cardinality_rate": 0.0282,
+          "examples": [
+            "1",
+            "0"
+          ]
+        }
+      },
+      "pk_candidates": [
+        "Fase_Id",
+        "Fase_Nome"
+      ]
+    },
+    "Modelos": {
+      "row_count": 894,
+      "column_count": 6,
+      "columns": {
+        "Produto_Id": {
+          "inferred_type": "integer",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 894,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "42504",
+            "42598",
+            "30178",
+            "27271",
+            "41544"
+          ]
+        },
+        "Produto_Nome": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 894,
+          "cardinality_rate": 1.0,
+          "examples": [
+            "C1 8 XXL F",
+            "K1 Vanquish Cinco XXXL F",
+            "K1 Cinco Paracanoe ML F",
+            "Navigator WWR",
+            "SB SS 2.3"
+          ]
+        },
+        "Produto_PesoDesmolde": {
+          "inferred_type": "float",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 60,
+          "cardinality_rate": 0.0671,
+          "examples": [
+            "17.25",
+            "15.25",
+            "9.8",
+            "14",
+            "15"
+          ]
+        },
+        "Produto_PesoAcabamento": {
+          "inferred_type": "float",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 61,
+          "cardinality_rate": 0.0682,
+          "examples": [
+            "9.8",
+            "27.5",
+            "30",
+            "14",
+            "15"
+          ]
+        },
+        "Produto_QtdGelDeck": {
+          "inferred_type": "float",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 28,
+          "cardinality_rate": 0.0313,
+          "examples": [
+            "0.75",
+            "0.899999976158142",
+            "0.9",
+            "0.5",
+            "1"
+          ]
+        },
+        "Produto_QtdGelCasco": {
+          "inferred_type": "float",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 39,
+          "cardinality_rate": 0.0436,
+          "examples": [
+            "0.75",
+            "1.8",
+            "2.1",
+            "0.9",
+            "1.7"
+          ]
+        }
+      },
+      "pk_candidates": [
+        "Produto_Id",
+        "Produto_Nome"
+      ]
+    },
+    "FasesStandardModelos": {
+      "row_count": 15347,
+      "column_count": 5,
+      "columns": {
+        "ProdutoFase_ProdutoId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 585,
+          "cardinality_rate": 0.0585,
+          "examples": [
+            "30178",
+            "27271",
+            "41544",
+            "28625",
+            "20201"
+          ]
+        },
+        "ProdutoFase_FaseId": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 27,
+          "cardinality_rate": 0.0027,
+          "examples": [
+            "46",
+            "65",
+            "40",
+            "74",
+            "42"
+          ]
+        },
+        "ProdutoFase_Sequencia": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 21,
+          "cardinality_rate": 0.0021,
+          "examples": [
+            "14",
+            "15",
+            "1",
+            "7",
+            "16"
+          ]
+        },
+        "ProdutoFase_Coeficiente": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 26,
+          "cardinality_rate": 0.0026,
+          "examples": [
+            "0.75",
+            "2.7",
+            "0.5",
+            "1",
+            "0.3"
+          ]
+        },
+        "ProdutoFase_CoeficienteX": {
+          "inferred_type": "string",
+          "null_rate": 0.0,
+          "null_count": 0,
+          "cardinality": 34,
+          "cardinality_rate": 0.0034,
+          "examples": [
+            "1.48148148148148",
+            "0.75",
+            "0.34",
+            "0.333333333333333",
+            "1.11111111111111"
+          ]
+        }
+      },
+      "pk_candidates": []
+    }
+  }
+}

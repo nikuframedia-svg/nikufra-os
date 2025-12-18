@@ -1,0 +1,21 @@
+{
+  "generated_at": "2025-12-17T14:16:08.704037",
+  "gates": {
+    "employee_productivity": {
+      "enabled": false,
+      "match_rate": 0.3231,
+      "threshold": 0.9,
+      "reason": "Match rate 32.3% below threshold",
+      "relationship": "FuncionarioFaseOf_FaseOfId \u2194 FaseOf_Id"
+    },
+    "produto_join": {
+      "enabled": true,
+      "degraded": true,
+      "match_rate": 0.7251,
+      "threshold": 0.95,
+      "reason": "Match rate 72.5% below threshold (degraded mode)",
+      "orphans_count": 339,
+      "relationship": "Produto_Id \u2194 Of_ProdutoId"
+    }
+  }
+}

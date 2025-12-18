@@ -8,17 +8,36 @@ from backend.config import DATABASE_URL
 
 @pytest.fixture(scope="function")
 def test_db():
-    """Create a test database session."""
-    # Use in-memory SQLite for tests
-    engine = create_engine("sqlite:///:memory:", echo=False)
-    Base.metadata.create_all(bind=engine)
-    SessionLocal = sessionmaker(bind=engine)
-    session = SessionLocal()
+    """Create a test database session using PostgreSQL."""
+    # PostgreSQL-only: tests require PostgreSQL features (partitions, INCLUDE, etc.)
+    from backend.config import DATABASE_URL
     
-    yield session
+    if not DATABASE_URL:
+        pytest.skip("Tests require PostgreSQL. DATABASE_URL not configured.")
     
-    session.close()
-    Base.metadata.drop_all(bind=engine)
+    if DATABASE_URL.startswith("sqlite"):
+        pytest.skip("Tests require PostgreSQL. SQLite is not supported.")
+    
+    if not (DATABASE_URL.startswith("postgresql://") or DATABASE_URL.startswith("postgresql+psycopg2://")):
+        pytest.skip(f"Tests require PostgreSQL. Unsupported scheme: {DATABASE_URL[:50]}")
+    
+    engine = create_engine(DATABASE_URL, echo=False)
+    
+    # Use transactions for cleanup (PostgreSQL-specific)
+    connection = engine.connect()
+    transaction = connection.begin()
+    
+    try:
+        Base.metadata.create_all(bind=connection)
+        SessionLocal = sessionmaker(bind=connection)
+        session = SessionLocal()
+        
+        yield session
+        
+        session.close()
+        transaction.rollback()  # Cleanup via rollback
+    finally:
+        connection.close()
 
 
 @pytest.fixture
@@ -50,5 +69,6 @@ def sample_worker_data():
         "name": "Test Worker",
         "department": "Production",
     }
+
 
 

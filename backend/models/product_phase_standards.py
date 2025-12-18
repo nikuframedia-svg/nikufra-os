@@ -16,10 +16,13 @@ class ProductPhaseStandard(Base):
     phase_id = Column(Integer, ForeignKey("phases.id"), nullable=False, index=True)
     
     # Standard route attributes
-    sequence_order = Column(Integer, nullable=False)  # Ordem na sequência (1, 2, 3...)
+    sequence_order = Column(Integer, nullable=False)  # ProdutoFase_Sequencia
     standard_duration_minutes = Column(Numeric, nullable=True)  # Duração standard para este produto
     mandatory = Column(String, nullable=True)  # Obrigatória (sim/não)
     notes = Column(String, nullable=True)  # Notas
+    # Campos adicionais do Excel
+    coeficiente = Column(Numeric, nullable=True)  # ProdutoFase_Coeficiente
+    coeficiente_x = Column(Numeric, nullable=True)  # ProdutoFase_CoeficienteX
     
     # Relationships
     product = relationship("Product", back_populates="phase_standards")

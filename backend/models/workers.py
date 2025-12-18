@@ -24,3 +24,4 @@ class Worker(Base):
     order_phase_assignments = relationship("OrderPhaseWorker", back_populates="worker")
 
 
+

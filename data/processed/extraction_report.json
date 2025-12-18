@@ -1,0 +1,82 @@
+{
+  "excel_path": "/Users/martimnicolau/nelo/data/raw/Folha_IA.xlsx",
+  "excel_checksum": "65816f17682b70a93d038c31255b2056d6cadfb3a53f179fad8fae2e44c73fb6",
+  "per_sheet_sha256": {
+    "OrdensFabrico": "02bb2cc957350e35f66eea9183be327737a3a28f8f2e549d07baab867544670c",
+    "FasesOrdemFabrico": "15dd3cb9449b207e35cff6af601dd1d9987875b8e854ef05bf73f247c22b6283",
+    "FuncionariosFaseOrdemFabrico": "edd0bdd9f9a9af5d94f13907537104530137cdb7b9ee8cda44de623c07623ac3",
+    "OrdemFabricoErros": "372572ed0ceeef00d362839eea179d284178f7e53060698693edf5af67f53563",
+    "Funcionarios": "99b91eb6785cdbdd1fcc0c9259cde8715e86c72c79bc9558741941910664182f",
+    "FuncionariosFasesAptos": "151a8d06421a8631154dccc6182fc20c39a772994d31303c2ed27a561d8b16cf",
+    "Fases": "7b888264d6f0785f747113ee06c28a44a907e95f456bdad856db4bc2d86e4ef8",
+    "Modelos": "2e1c40f35bf65dc8fc9e5b298d57db0bf1fbf2af223d66e0d4485b8393387466",
+    "FasesStandardModelos": "5a1138132338bd560e8373bda140eca2af42a01d8b161793b8604ef28050a99e"
+  },
+  "sheets": {
+    "OrdensFabrico": {
+      "sheet_name": "OrdensFabrico",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/OrdensFabrico.csv.gz",
+      "row_count": 27380,
+      "checksum": "02bb2cc957350e35f66eea9183be327737a3a28f8f2e549d07baab867544670c",
+      "file_size_mb": 0.4
+    },
+    "FasesOrdemFabrico": {
+      "sheet_name": "FasesOrdemFabrico",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/FasesOrdemFabrico.csv.gz",
+      "row_count": 519079,
+      "checksum": "15dd3cb9449b207e35cff6af601dd1d9987875b8e854ef05bf73f247c22b6283",
+      "file_size_mb": 7.25
+    },
+    "FuncionariosFaseOrdemFabrico": {
+      "sheet_name": "FuncionariosFaseOrdemFabrico",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/FuncionariosFaseOrdemFabrico.csv.gz",
+      "row_count": 423769,
+      "checksum": "edd0bdd9f9a9af5d94f13907537104530137cdb7b9ee8cda44de623c07623ac3",
+      "file_size_mb": 1.79
+    },
+    "OrdemFabricoErros": {
+      "sheet_name": "OrdemFabricoErros",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/OrdemFabricoErros.csv.gz",
+      "row_count": 89836,
+      "checksum": "372572ed0ceeef00d362839eea179d284178f7e53060698693edf5af67f53563",
+      "file_size_mb": 0.59
+    },
+    "Funcionarios": {
+      "sheet_name": "Funcionarios",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/Funcionarios.csv.gz",
+      "row_count": 902,
+      "checksum": "99b91eb6785cdbdd1fcc0c9259cde8715e86c72c79bc9558741941910664182f",
+      "file_size_mb": 0.0
+    },
+    "FuncionariosFasesAptos": {
+      "sheet_name": "FuncionariosFasesAptos",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/FuncionariosFasesAptos.csv.gz",
+      "row_count": 902,
+      "checksum": "151a8d06421a8631154dccc6182fc20c39a772994d31303c2ed27a561d8b16cf",
+      "file_size_mb": 0.0
+    },
+    "Fases": {
+      "sheet_name": "Fases",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/Fases.csv.gz",
+      "row_count": 71,
+      "checksum": "7b888264d6f0785f747113ee06c28a44a907e95f456bdad856db4bc2d86e4ef8",
+      "file_size_mb": 0.0
+    },
+    "Modelos": {
+      "sheet_name": "Modelos",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/Modelos.csv.gz",
+      "row_count": 894,
+      "checksum": "2e1c40f35bf65dc8fc9e5b298d57db0bf1fbf2af223d66e0d4485b8393387466",
+      "file_size_mb": 0.01
+    },
+    "FasesStandardModelos": {
+      "sheet_name": "FasesStandardModelos",
+      "file_path": "/Users/martimnicolau/nelo/data/processed/FasesStandardModelos.csv.gz",
+      "row_count": 15347,
+      "checksum": "5a1138132338bd560e8373bda140eca2af42a01d8b161793b8604ef28050a99e",
+      "file_size_mb": 0.05
+    }
+  },
+  "total_rows_extracted": 1078180,
+  "extracted_at": "2025-12-18T17:55:42.136381"
+}

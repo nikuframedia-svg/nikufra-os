@@ -19,12 +19,19 @@ class OrderPhase(Base):
     fase_of_id = Column(String, unique=True, index=True, nullable=False)  # Original FaseOf_Id from Excel
     start_date = Column(DateTime, nullable=True)  # FaseOf_Inicio
     end_date = Column(DateTime, nullable=True)  # FaseOf_Fim
-    planned_start = Column(DateTime, nullable=True)  # Data prevista início
+    planned_start = Column(DateTime, nullable=True)  # FaseOf_DataPrevista
     planned_end = Column(DateTime, nullable=True)  # Data prevista fim
     duration_minutes = Column(Numeric, nullable=True)  # Calculated duration
     status = Column(String, nullable=True)  # Status da fase
     machine_id = Column(String, nullable=True)  # Máquina utilizada
     center = Column(String, nullable=True)  # Centro de trabalho
+    # Campos adicionais do Excel
+    coeficiente = Column(Numeric, nullable=True)  # FaseOf_Coeficiente
+    coeficiente_x = Column(Numeric, nullable=True)  # FaseOf_CoeficienteX
+    peso = Column(Numeric, nullable=True)  # FaseOf_Peso
+    retorno = Column(String, nullable=True)  # FaseOf_Retorno (0/1 ou sim/não)
+    turno = Column(Numeric, nullable=True)  # FaseOf_Turno
+    sequence_order = Column(Integer, nullable=True)  # FaseOf_Sequencia (ordem na sequência da ordem)
     
     # Relationships
     order = relationship("Order", back_populates="phases")

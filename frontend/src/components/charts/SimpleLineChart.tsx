@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface DataPoint {
   time: string;
@@ -36,7 +35,6 @@ export function SimpleLineChart({
   const range = maxValue - minValue || 1;
   const padding = 20;
   const chartHeight = height - padding * 2;
-  const chartWidth = 100; // Simplified, would be dynamic in real implementation
 
   return (
     <div style={{ height, position: 'relative' }}>

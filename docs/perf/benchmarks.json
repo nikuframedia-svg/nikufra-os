@@ -1,0 +1,104 @@
+{
+  "generated_at": "2025-12-18T08:45:16.159454",
+  "backend_available": true,
+  "backend_url": "http://localhost:8000",
+  "endpoints": {
+    "/api/prodplan/orders": {
+      "method": "GET",
+      "target_p95_ms": 400,
+      "description": "List orders",
+      "status": "MEASURED",
+      "p50_ms": 36.14,
+      "p95_ms": 80.68,
+      "p99_ms": 80.68,
+      "meets_target": true,
+      "min_ms": 17.54,
+      "max_ms": 80.68,
+      "avg_ms": 38.09,
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    "/api/prodplan/orders/{id}": {
+      "method": "GET",
+      "target_p95_ms": 250,
+      "description": "Get order by ID",
+      "example_id": "OF001",
+      "status": "MEASURED",
+      "p50_ms": 19.99,
+      "p95_ms": 116.36,
+      "p99_ms": 116.36,
+      "meets_target": true,
+      "min_ms": 4.87,
+      "max_ms": 116.36,
+      "avg_ms": 31.0,
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    "/api/prodplan/schedule/current": {
+      "method": "GET",
+      "target_p95_ms": 250,
+      "description": "Current schedule",
+      "status": "MEASURED",
+      "p50_ms": 4.33,
+      "p95_ms": 5.64,
+      "p99_ms": 5.64,
+      "meets_target": true,
+      "min_ms": 3.35,
+      "max_ms": 5.64,
+      "avg_ms": 4.5,
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    "/api/kpis/overview": {
+      "method": "GET",
+      "target_p95_ms": 300,
+      "description": "KPIs overview",
+      "status": "MEASURED",
+      "p50_ms": 4.59,
+      "p95_ms": 10.3,
+      "p99_ms": 10.3,
+      "meets_target": true,
+      "min_ms": 3.8,
+      "max_ms": 10.3,
+      "avg_ms": 5.25,
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    "/api/smartinventory/wip": {
+      "method": "GET",
+      "target_p95_ms": 300,
+      "description": "WIP list",
+      "status": "MEASURED",
+      "p50_ms": 7.36,
+      "p95_ms": 34.12,
+      "p99_ms": 34.12,
+      "meets_target": true,
+      "min_ms": 4.59,
+      "max_ms": 34.12,
+      "avg_ms": 9.97,
+      "errors": [
+        "HTTP 500"
+      ]
+    },
+    "/api/quality/overview": {
+      "method": "GET",
+      "target_p95_ms": 300,
+      "description": "Quality overview",
+      "status": "MEASURED",
+      "p50_ms": 6.96,
+      "p95_ms": 11.84,
+      "p99_ms": 11.84,
+      "meets_target": true,
+      "min_ms": 4.37,
+      "max_ms": 11.84,
+      "avg_ms": 6.64,
+      "errors": [
+        "HTTP 500"
+      ]
+    }
+  }
+}

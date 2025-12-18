@@ -1,0 +1,609 @@
+{
+  "schemas": [
+    "public",
+    "staging"
+  ],
+  "core_tables": {
+    "public.ordens_fabrico": {
+      "columns": [
+        {
+          "name": "of_id",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "of_data_criacao",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "of_data_acabamento",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": true
+        },
+        {
+          "name": "of_produto_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "of_fase_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "of_data_transporte",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": true
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "atualizado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "of_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "ordens_fabrico_pkey",
+          "columns": [
+            "of_id"
+          ]
+        }
+      ]
+    },
+    "public.fases_ordem_fabrico": {
+      "columns": [
+        {
+          "name": "faseof_id",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "faseof_of_id",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "faseof_inicio",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_fim",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "faseof_data_prevista",
+          "data_type": "date",
+          "udt_name": "date",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_coeficiente",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_coeficiente_x",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_fase_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_peso",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_retorno",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_turno",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_sequencia",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_event_time",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_duration_seconds",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_is_open",
+          "data_type": "boolean",
+          "udt_name": "bool",
+          "is_nullable": true
+        },
+        {
+          "name": "faseof_is_done",
+          "data_type": "boolean",
+          "udt_name": "bool",
+          "is_nullable": true
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "atualizado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "faseof_id",
+        "faseof_fim"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "fases_ordem_fabrico_pkey",
+          "columns": [
+            "faseof_id",
+            "faseof_fim"
+          ]
+        }
+      ]
+    },
+    "public.erros_ordem_fabrico": {
+      "columns": [
+        {
+          "name": "erro_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "ofch_descricao_erro",
+          "data_type": "text",
+          "udt_name": "text",
+          "is_nullable": false
+        },
+        {
+          "name": "ofch_of_id",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "ofch_fase_avaliacao",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "ofch_gravidade",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "ofch_faseof_avaliacao",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": true
+        },
+        {
+          "name": "ofch_faseof_culpada",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": true
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "ofch_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "ofch_event_time",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": true
+        },
+        {
+          "name": "ofch_fingerprint",
+          "data_type": "text",
+          "udt_name": "text",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "erro_id",
+        "ofch_of_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "erros_ordem_fabrico_pkey",
+          "columns": [
+            "erro_id",
+            "ofch_of_id"
+          ]
+        },
+        {
+          "name": "ux_erros_ofch_fingerprint",
+          "columns": [
+            "ofch_fingerprint",
+            "ofch_of_id"
+          ]
+        }
+      ]
+    },
+    "public.funcionarios": {
+      "columns": [
+        {
+          "name": "funcionario_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "funcionario_nome",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "funcionario_activo",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "atualizado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "funcionario_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "funcionarios_pkey",
+          "columns": [
+            "funcionario_id"
+          ]
+        }
+      ]
+    },
+    "public.funcionarios_fases_aptos": {
+      "columns": [
+        {
+          "name": "funcionario_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "fase_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "funcionariofase_inicio",
+          "data_type": "date",
+          "udt_name": "date",
+          "is_nullable": false
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "funcionario_id",
+        "fase_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "funcionarios_fases_aptos_pkey",
+          "columns": [
+            "funcionario_id",
+            "fase_id"
+          ]
+        }
+      ]
+    },
+    "public.funcionarios_fase_ordem_fabrico": {
+      "columns": [
+        {
+          "name": "funcionariofaseof_faseof_id",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "funcionariofaseof_funcionario_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "funcionariofaseof_chefe",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "funcionariofaseof_faseof_id",
+        "funcionariofaseof_funcionario_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "funcionarios_fase_ordem_fabrico_pkey",
+          "columns": [
+            "funcionariofaseof_faseof_id",
+            "funcionariofaseof_funcionario_id"
+          ]
+        }
+      ]
+    },
+    "public.fases_catalogo": {
+      "columns": [
+        {
+          "name": "fase_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "fase_nome",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "fase_sequencia",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": true
+        },
+        {
+          "name": "fase_de_producao",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "fase_automatica",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "atualizado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "fase_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "fases_catalogo_pkey",
+          "columns": [
+            "fase_id"
+          ]
+        },
+        {
+          "name": "idx_fases_nome",
+          "columns": [
+            "fase_nome"
+          ]
+        }
+      ]
+    },
+    "public.modelos": {
+      "columns": [
+        {
+          "name": "produto_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "produto_nome",
+          "data_type": "character varying",
+          "udt_name": "varchar",
+          "is_nullable": false
+        },
+        {
+          "name": "produto_peso_desmolde",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "produto_peso_acabamento",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "produto_qtd_gel_deck",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "produto_qtd_gel_casco",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        },
+        {
+          "name": "atualizado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "produto_id"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "idx_modelos_nome",
+          "columns": [
+            "produto_nome"
+          ]
+        },
+        {
+          "name": "modelos_pkey",
+          "columns": [
+            "produto_id"
+          ]
+        }
+      ]
+    },
+    "public.fases_standard_modelos": {
+      "columns": [
+        {
+          "name": "produto_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "fase_id",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "sequencia",
+          "data_type": "integer",
+          "udt_name": "int4",
+          "is_nullable": false
+        },
+        {
+          "name": "coeficiente",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "coeficiente_x",
+          "data_type": "numeric",
+          "udt_name": "numeric",
+          "is_nullable": true
+        },
+        {
+          "name": "criado_em",
+          "data_type": "timestamp with time zone",
+          "udt_name": "timestamptz",
+          "is_nullable": false
+        }
+      ],
+      "primary_key": [
+        "produto_id",
+        "fase_id",
+        "sequencia"
+      ],
+      "unique_constraints": [],
+      "unique_indexes": [
+        {
+          "name": "fases_standard_modelos_pkey",
+          "columns": [
+            "produto_id",
+            "fase_id",
+            "sequencia"
+          ]
+        }
+      ]
+    }
+  }
+}

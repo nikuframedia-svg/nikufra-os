@@ -1,4 +1,4 @@
-export interface KPI {
+export interface KPI extends Record<string, unknown> {
   otd_pct: number;
   lead_time_h: number;
   gargalo_ativo: string;
@@ -40,6 +40,7 @@ export interface PlanV2Operation {
   quantidade: number;
   duracao_h: number;
   family: string;
+  artigo?: string; // Campo opcional para compatibilidade
 }
 
 export interface PlanV2Result {
@@ -64,7 +65,7 @@ export interface PlanV2Response {
   };
 }
 
-export interface Bottleneck {
+export interface Bottleneck extends Record<string, unknown> {
   recurso: string;
   utilizacao_pct: number;
   fila_horas: number;
@@ -96,7 +97,7 @@ export interface BottleneckResponse {
   demo_overrides?: Record<string, boolean>;
 }
 
-export interface InventorySKU {
+export interface InventorySKU extends Record<string, unknown> {
   sku: string;
   classe: string;
   xyz: string;

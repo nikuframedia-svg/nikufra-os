@@ -273,7 +273,7 @@ export const GanttChart = ({ operations, title, startDate, endDate, isBaseline =
                 {sector}
               </div>
               {/* Máquinas do setor */}
-              {machines.map((machine, idx) => {
+              {machines.map((machine) => {
                 const globalIdx = allMachines.indexOf(machine)
                 const hasOperations = operationsByResource[machine]?.length > 0
                 const rowTop = globalIdx * rowHeight + Object.keys(machinesBySector).indexOf(sector) * sectorSpacing + 20

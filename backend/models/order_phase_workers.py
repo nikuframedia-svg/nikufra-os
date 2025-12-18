@@ -19,7 +19,8 @@ class OrderPhaseWorker(Base):
     start_time = Column(DateTime, nullable=True)  # Início da afetação
     end_time = Column(DateTime, nullable=True)  # Fim da afetação
     hours_worked = Column(Numeric, nullable=True)  # Horas trabalhadas
-    role = Column(String, nullable=True)  # Papel/função do trabalhador nesta fase
+    role = Column(String, nullable=True)  # FuncionarioFaseOf_Chefe (chefe ou trabalhador)
+    is_chefe = Column(String, nullable=True)  # FuncionarioFaseOf_Chefe (0/1 ou sim/não)
     
     # Relationships
     order_phase = relationship("OrderPhase", back_populates="workers")

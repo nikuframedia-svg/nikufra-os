@@ -78,7 +78,7 @@ export const DataUploader = () => {
           method: 'POST',
           body: formData,
           headers: {
-            'X-API-Key': import.meta.env.VITE_API_KEY ?? '',
+            'X-API-Key': (import.meta.env?.VITE_API_KEY as string) ?? '',
           },
           signal: abort.signal,
         })
